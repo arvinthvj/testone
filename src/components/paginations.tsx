@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect} from 'react'
 import { useTable, usePagination } from 'react-table'
-import './Styles/table.scss'
+//import './Styles/table.scss'
 import axios, { AxiosResponse} from 'axios'
 import * as ReactBootStrap from 'react-bootstrap'
 import  InfiniteScroll from 'react-infinite-scroll-component';

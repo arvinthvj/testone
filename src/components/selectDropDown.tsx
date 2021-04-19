@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 
 import { AsyncPaginate } from "react-select-async-paginate";
 
- const SelectDropDown=()=>{
-  const loadOptions = async (searchQuery, loadedOptions, { page }) => {
+ export  const SelectDropDown=()=>{
+  const loadOptions = async (searchQuery: any, loadedOptions: any, { page }: any) => {
     const response = await fetch(
       `https://api.instantwebtools.net/v1/passenger?page=${page}&size=40`
     );
@@ -19,16 +19,16 @@ import { AsyncPaginate } from "react-select-async-paginate";
       },
     };
   };
-  const [selected,setSelected]=useState([]);
+  const [selected,setSelected]=useState<any>([]);
 
-  const onChange = (options) => {
+  const onChange = (options: React.SetStateAction<never[]>) => {
    
       setSelected(options);
     
   };
 
   
-  const promiseOptions = inputValue =>
+  const promiseOptions = (inputValue: any) =>
   new Promise(resolve => {
     setTimeout(() => {
       resolve(filterColors(inputValue));
@@ -41,7 +41,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
     isMulti
     cacheOptions
     defaultOptions
-    loadOptions={promiseOptions}
+    // loadOptions={promiseOptions}
       
       loadOptions={loadOptions}
       getOptionValue={(options) => options.name}
@@ -55,7 +55,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
     />
 
     <div>
-{selected.map((data)=>(
+{selected.map((data : any)=>(
 <>
 <p>{data._id}</p>
 <p>{data.name}</p>
@@ -68,4 +68,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
   );
 };
 
-export default SelectDropDown
+function filterColors(inputValue: any): unknown {
+  throw new Error("Function not implemented.");
+}
+

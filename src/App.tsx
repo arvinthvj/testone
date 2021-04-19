@@ -8,6 +8,7 @@ import { Paginations } from './components/paginations';
 import * as ReactBootStrap from 'react-bootstrap'
 /* import {loading} from './components/paginations' */
 import { SelectDropDown } from "./components/selectDropDown"
+import { AsyncDropDown } from './components/AsyncDropDown';
 
 
 function App() {
@@ -15,10 +16,12 @@ function App() {
   /* const [loading, setLoading] = useState<boolean>(false); */
   return (
     <div className="App">
-      <div><SelectDropDown/></div>
+      <AsyncDropDown/>
+      {/* <div><SelectDropDown/></div> */}
+
       {/* <Pagination /> */}
       {/* {loading ? (<Paginations />): (<ReactBootStrap.Spinner animation="border" />)} */}
-      <Paginations />
+      {/* <Paginations /> */}
            {/* <Table />  */}
           {/*  <TableData /> */}
     </div>
